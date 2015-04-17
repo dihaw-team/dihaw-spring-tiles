@@ -13,14 +13,15 @@ public class HelloController {
 	private final Logger logger = LoggerFactory.getLogger(getClass());
 	
 	private static int counter = 0;
-	private static String INDEX_VIEW = "view/hello";
-	private static String ABOUT_VIEW = "view/about";
+	private static String INDEX_VIEW = "view/hello/view";
+	private static String ABOUT_VIEW = "view/about/view";
+	
 	private static String MESSAGE = "message";
 	private static String COUNTER = "counter";
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String showIndex(Model model) {
- 
+	public String showHelloView(Model model) {
+		
 		model.addAttribute(MESSAGE, "Welcome");
 		model.addAttribute(COUNTER, ++counter);
 		
@@ -29,7 +30,7 @@ public class HelloController {
 		return INDEX_VIEW;
  
 	}
- 
+	
 	@RequestMapping(value = "/{name}", method = RequestMethod.GET)
 	public String welcomeName(@PathVariable String name, Model model) {
  
@@ -41,11 +42,13 @@ public class HelloController {
 		return INDEX_VIEW;
  
 	}
-	
+
+
 	@RequestMapping(value = "/about", method = RequestMethod.GET)
 	public String showAboutView() {
  
 		return ABOUT_VIEW;
 	}
+
 
 }

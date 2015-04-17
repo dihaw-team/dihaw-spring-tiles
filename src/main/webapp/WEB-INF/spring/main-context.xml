@@ -19,5 +19,13 @@
 		<property name="basename" value="content.Language" />
 	</bean>
 	
+	<!-- bean id="jsonView" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
+		<property name="extractValueFromSingleKeyModel" value="true" />
+		<property name="modelKey" value="json" />
+		<property name="contentType" value="application/json" />
+	</bean -->
+	
+	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
+	</bean>
 	
 </beans>

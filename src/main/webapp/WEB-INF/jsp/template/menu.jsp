@@ -6,8 +6,6 @@
 <spring:url value="/about" var="aboutUrl" />
 
 <div class="menu">
-
-
 	<ul>
 		<li ${fn:contains(pageContext.request.requestURI, 'about') ? 'class="selected"' : ''}>
 			<a href="${aboutUrl}"><spring:message code="menu.about" /></a>
